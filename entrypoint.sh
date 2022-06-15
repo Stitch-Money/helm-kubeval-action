@@ -40,7 +40,7 @@ for CHART in "$CHARTS_PATH"/*/; do
     helm dependency build --skip-refresh;
 
     if [ -d "ci" ]; then
-        for VALUES_FILE in ci/*-values.yaml; do
+        for VALUES_FILE in *-values.yaml; do
             echo "Validating $CHART Helm Chart using $VALUES_FILE values file...";
             run_kubeval "$(pwd)" "$VALUES_FILE"
         done

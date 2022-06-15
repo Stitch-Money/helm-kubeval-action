@@ -1,3 +1,5 @@
+This is forked from https://github.com/marketplace/actions/helm-chart-testing
+
 # Helm Kubeval
 
 A [GitHub Action](https://github.com/features/actions) for using [Kubeval](https://github.com/instrumenta/kubeval) to validate Helm Charts in your workflows.
@@ -26,7 +28,7 @@ jobs:
 By default the action will:
 
 - Look for each Helm Chart
-- For each, look for values file in its ci directory (otherwise don't use values file)
+- For each, look for values file in the chart directory (otherwise don't use values file)
 - run `helm template` and validate the output as Kubernetes objects.
 
 ## Inputs
