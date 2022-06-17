@@ -12,7 +12,7 @@ run_kubeval() {
     mkdir -p helm-output;
     helm template --values "$VALUES_FILE" --output-dir helm-output .;
     find helm-output -type f -exec \
-        kubeval \
+        /kubeval/kubeval \
             "-o=$OUTPUT" \
             "--strict=$STRICT" \
             "--kubernetes-version=$KUBERNETES_VERSION" \
