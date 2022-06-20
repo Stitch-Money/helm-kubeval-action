@@ -37,8 +37,7 @@ helm repo update
 # For all charts (i.e for every directory) in the directory
 for CHART in "$CHARTS_PATH"/*/; do
     echo "Chart is $CHART"
-    echo "Validating $CHART Helm Chart...";
-    cd "$CHART";
+    cd "$CURRENT_DIR/$CHART";
     helm dependency build --skip-refresh;
 
     for VALUES_FILE in *-values.yaml; do
