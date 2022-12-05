@@ -44,7 +44,6 @@ for CHART in "$CHARTS_PATH"/*/; do
         echo "Validating $CHART Helm Chart using $VALUES_FILE values file...";
         run_kubeval "$(pwd)" "$VALUES_FILE"
     done
-    run_kubeval "$(pwd)" "values.yaml"
     echo "Cleanup $(pwd)/charts directory after we are done running Kubeval"
     rm -rf $(pwd)/charts/
 done
